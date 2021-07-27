@@ -1,0 +1,418 @@
+html {
+    width: 100vw;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Quentin', cursive;
+    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Signika', sans-serif;
+    background-color: #354857;
+    color: whitesmoke;
+}
+body {
+    // height: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 75px;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 150px repeat(2, auto);
+    background-color: #354857;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+}
+.header { //container grid 
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: grid;
+    width: 100%;
+    max-width: 1250px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(1, auto);
+    justify-content: space-between;
+    background-color: #354857;
+    position: fixed;
+    z-index: 3;
+    top: 0px;
+}
+.title { //header grid
+    font-family: 'Libre Franklin', sans-serif; 
+    font-size: 5rem;
+    text-align: left;
+    align-self: center;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.navbar { //header grid
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    align-self: center;
+    grid-column-end: 3;
+    grid-row: 1;
+}
+
+.nav { //header grid
+    list-style-type: none;
+    float: left;
+    width: 100%;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 2rem;
+    color: whitesmoke;
+    display: flex;
+    font-weight: bold;
+    transition: 0.3s;
+    align-items: baseline;
+}
+
+li.navItems {
+    float: left;
+    padding: 5px;
+}
+li > a {
+    text-decoration: none;
+    color: whitesmoke;
+    display: block;
+    padding: 5px;
+    width: 100%;
+}
+h1 {
+    margin-bottom: 0;
+}
+h1 > a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    box-sizing: border-box;
+    padding: 5px;
+}
+.navItems:not(:last-child) {
+    margin-right: 20px;
+}
+li > a:hover {
+    background-color: whitesmoke;
+    color: #354857;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.headerdivider { //header grid
+    border-bottom: 3px solid whitesmoke;
+    grid-column: 1 / 3;
+    position: relative;
+    bottom: 0px;
+}
+.titleImage {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    height: 400px;
+    background-image: url('/images/kevin_smiling.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+    background-size: 100%;
+}
+.statementContain {
+    padding-top: 0px;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(3, minmax(0, 1fr));
+}
+.statement {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    color: #354857;
+    width: 85%;
+    font-size: 5rem;
+    font-family: 'Signika', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+    // box-sizing: border-box;
+    // margin-right: 500px;
+    padding-right: 5%;
+    margin-left: 10px;
+    line-height: 110%;
+}
+.kevin {
+    font-family: 'Quentin', cursive;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 10rem;
+    float: right;
+    // line-height: 100%;
+}
+.values {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    font-family: inherit;
+    font-size: 3rem;
+    line-height: 100%;
+    text-align: left;
+    margin: 0;
+    margin-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.valueAction {
+    font-style: italic;
+    font-weight: 600;
+}
+.aboutContain { // about grid
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0px 75px;
+    padding-bottom: 75px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(6, auto);
+    row-gap: 50px;
+    background-color: #354857;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+}
+.imgContain { //aboutContain grid
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    display: grid;
+    width: 100%;
+    max-height: 100%;
+    background-image: url('/images/Rizer_02.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    scroll-margin: 150px;
+    box-sizing: border-box;
+}
+.aboutTxt { //aboutContain grid
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding-left: 20px;
+}
+h3 { //aboutTxt grid
+    font-size: 4rem;
+    margin: 0px;
+}
+p.about { //aboutTxt grid
+    font-size: 2rem;
+    margin-top: 0;
+}
+.about2 { //aboutContain grid
+    grid-row: 3 / 6;
+    grid-column: 1 / 2;
+    font-size: 2rem;
+    margin: 0;
+    max-width: 100%;
+    text-align: left;
+    color: inherit;
+    box-sizing: border-box;
+    padding-right: 2%;
+}
+.img2Contain { //aboutContain grid
+    grid-column: 3 / 4;
+    grid-row: 3 / 6;
+    background: url('/images/kevin_new_outside_smiling_big.jpg') no-repeat;
+    background-size: cover;
+    background-position: 0% 50%;
+}
+#work {
+    scroll-margin-top: 80px;
+}
+.workContain {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 75px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    background-color: #354857;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+    row-gap: 30px;
+}
+.BookContain {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: left;
+    background: url('/images/AWP-1200×630px.png') no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.workTxt {
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+    font-size: 2rem;
+    padding-left: 20px;
+}
+.workTxt>p {
+    margin-top: 0;
+}
+.available {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+.plm {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+    font-size: 2rem;
+    margin: 0;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+.plmHead {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+.podcast {
+    margin-top: 10px;
+}
+.plmImg {
+    grid-column: 3 / 5;
+    grid-row: 2 / 4;
+    background: url('/images/kevin_new_studio_smiling3.jpg') no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#speaking {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 75px 75px;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+    background-color: #354857;
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(4, 1fr);
+    scroll-margin-top: 80px;
+}
+.speakContain {
+    grid-column: 1 / 3;
+    grid-row: 1/ 4;
+}
+.speaker {
+    font-size: 2rem;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+.inquire {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+.speakImg {
+    grid-column: 3 / 5;
+    grid-row: 1 / 4;
+    background: url('/images/Rizer_11.jpg') no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#connect {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 75px;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+    background-color: #354857;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+} 
+.headshot {
+    grid-column: 3 / 5;
+    grid-row: 1 / 6;
+    width: 100%;
+    height: 100%;
+    background: url('/images/Rizer_09.jpg') no-repeat;
+    background-position: 50% 20%;
+    background-size: cover;
+} 
+.linkContain {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+.iconContain {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.icon {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+.text {
+    grid-column: 1 / 2;
+    justify-self: center;
+}
+.icon > p {
+    text-align: center;
+    margin-top: 5px;
+    font-family: 'Signika', sans-serif;
+    font-weight: 600;
+}
+.textIcon {
+    background: url('/images/icons/cellphone.png') no-repeat;
+    background-size: 80%;
+    background-position: 50% 50%;
+    height: 100%;
+    width: 100%;
+}
+.email {
+    grid-column: 2 / 3;
+    justify-self: center;
+}
+.emailIcon {
+    background: url('/images/icons/email.png') no-repeat;
+    background-size: 80%;
+    background-position: 50% 50%;
+    height: 100%;
+    width: 100%;
+}
+.facebook {
+    grid-column: 3 / 4;
+    justify-self: center;
+}
+.fbIcon {
+    background: url('/images/icons/facebook.png') no-repeat;
+    background-size: 80%;
+    background-position: 50% 50%;
+    height: 100%;
+    width: 100%;
+}
+.instagram {
+    grid-column: 4 / 5;
+    justify-self: center;
+}
+.instaIcon {
+    background: url('/images/icons/instagram.png') no-repeat;
+    background-size: 80%;
+    background-position: 50% 50%;
+    height: 100%;
+    width: 100%;
+}
+.linkedin {
+    grid-column: 5 / 6;
+    justify-self: center;
+}
+.inIcon {
+    background: url('/images/icons/linkedin.png') no-repeat;
+    background-size: 80%;
+    background-position: 50% 50%;
+    height: 100%;
+    width: 100%;
+}
+.icon:hover {
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+// * {
+//     border: 1px solid red
+// }
