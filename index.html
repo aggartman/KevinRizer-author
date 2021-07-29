@@ -10,103 +10,118 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Signika:wght@300;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         @font-face {
             font-family: "Quentin";
             src: url('/Quentin.otf');
         }
     </style>
+    <script src="/script/main.js" defer></script>
 </head>
 <body>
     <a name='top'></a>
     <div class=container>
         <div class='header'>
-            <h1><a class="anchor title" href="#top">Kevin Rizer</h1>
+            <a class="anchor title" href="#top">Kevin Rizer</a>
             <nav class="navbar">
-                <ul class='nav'>
-                    <li class="navItems aboutnav"><a class="anchor" href="#about">About</a></li>
-                    <li class="navItems"><a class="anchor" href="#work">Work</a></li>
-                    <li class="navItems"><a class='anchor' href="#speaking">Speaking</a></li>
-                    <li class="navItems"><a class='anchor' href="#connect">Connect</a></li>
-                </ul>
+
+                <div class='nav' id="myNav">
+                    <a class="anchor" href="#about">About</a>
+                    <a class="anchor" href="#work">Work</a>
+                    <a class='anchor' href="#speaking">Speaking</a>
+                    <a class='anchor' href="#bottom">Connect</a>
+                    <a href="javascript:void(0);" class="icon"      onclick="myFunction()"><i class="fa fa-bars"></i></a>
+                </div>
+
             </nav>
             <div class='headerdivider'></div>
         </div>
         <div class='titleImage'></div>
         <div class='statementContain'>
             <p class='statement'>Hi, my name is <br> <span class='kevin'>Kevin</span></p>
-            <div class='values'>
-                <p class='values'>I believe you deserve to love what you do.<br>
-                    I believe you should look forward to Monday mornings.<br>
-                    I believe the future of work is happening now. <br>
-                    <span class='valueAction'>Let’s shape it.</span>
-                    </p>
+        </div>
+        <div class='values'>
+            <p class=''>I believe you deserve to love what you do.<br>
+                I believe you should look forward to Monday mornings.<br>
+                I believe the future of work is happening now. <br>
+                <span class='valueAction'>Let’s shape it.</span>
+                </p>
+        </div>
+        <div class='aboutContain'>
+            <div class='imgContain' id=about>
+            </div>
+            <div class=aboutTxt>
+                <h3 class='about'>About</h3><br>
+                <p class='about'>Kevin Rizer, the authority on remote work, is an entrepreneur, speaker, and author whose content has reached millions of people worldwide. In 2015, Rizer founded and hosted the popular Private Label Movement podcast, interviewing some of the biggest names and brightest minds in the e-commerce world. He has appeared on stages throughout the world sharing with audiences on topics of e-commerce and finding the passion and purpose in work. Today, he is the founder and CEO of a pet products company sold throughout the U.S., Europe, Australia and Japan.</p>
+            </div>
+            <div class=img2Contain></div>
+            <p class='about2'>Rizer is best known for sharing openly about the ups and downs of entrepreneurship, and his down-to-earth, relatable personality has won over fans among thought leaders and audiences alike. Having worked from home for more than a decade, Rizer is passionate about helping others discover the art of working remotely and being happier in the process. Rizer lives in Dallas, Texas with his partner Austin, and their Labrador retriever, Mika. When he’s not working, Rizer enjoys being outdoors, binge-watching true crime dramas, and supporting causes important to him in the animal welfare, entrepreneurial and neuro-diverse communities.</p>
+            </div>
+        <div class="workContain" id='work'>
+            <div class="BookContain"></div>
+            <div class="workTxt">
+                <h3>Work</h3>
+                <p>
+                    Always Wear Pants: And 99 Other Tips for Surviving And Thriving While You Work From Home (Mandala Tree Press, September 2021) by Kevin Rizer is the ultimate guide, filled with simple, practical —and sometimes humorous— steps for remote workers to take to master the art of creating your dream lifestyle, whether you are brand new to working from home or have done it for years.Having been an entrepreneur and leading a remote team for a decade, Rizer shares tips and stories of what has and has not worked for him, as well as advice from friends and professionals. <br>
+                    <span class='available'>
+                        Available at Barnes & Noble, Amazon, alwayswearpants.com
+                    </span></p>
+            </div>
+            <div class="plm">
+                <h5 class="plmHead">Private Label Movement</h5>
+                <p class='podcast'>In 2015, Kevin founded the Private Label Podcast (which later became Private Label Movement). The show was the preeminent authority for Amazon sellers and e-commerce startups, with millions of downloads and a loyal, highly engaged audience. Kevin’s down to earth personality and curiosity-driven interview style won over fans as he probed the minds of thought leaders and everyday rags to riches entrepreneurs. Kevin exited the show in 2018 and was not the host of the final season.</p>
+            </div>
+            <div class='plmImg'>
             </div>
         </div>
-    </div>
-    <div class='aboutContain'>
-        <div class='imgContain' id=about>
-        </div>
-        <div class=aboutTxt>
-            <h3 class='about'>About</h3><br>
-            <p class='about'>Kevin Rizer, the authority on remote work, is an entrepreneur, speaker, and author whose content has reached millions of people worldwide. In 2015, Rizer founded and hosted the popular Private Label Movement podcast, interviewing some of the biggest names and brightest minds in the e-commerce world. He has appeared on stages throughout the world sharing with audiences on topics of e-commerce and finding the passion and purpose in work. Today, he is the founder and CEO of a pet products company sold throughout the U.S., Europe, Australia and Japan.</p>
-        </div>
-        <p class='about2'>Rizer is best known for sharing openly about the ups and downs of entrepreneurship, and his down-to-earth, relatable personality has won over fans among thought leaders and audiences alike. Having worked from home for more than a decade, Rizer is passionate about helping others discover the art of working remotely and being happier in the process. Rizer lives in Dallas, Texas with his partner Austin, and their Labrador retriever, Mika. When he’s not working, Rizer enjoys being outdoors, binge-watching true crime dramas, and supporting causes important to him in the animal welfare, entrepreneurial and neuro-diverse communities.</p>
-        <div class=img2Contain>
-        </div>
-    </div>
-    <div class="workContain" id='work'>
-        <div class="BookContain"></div>
-        <div class="workTxt">
-            <h3>Work</h3>
-            <p>
-                Always Wear Pants: And 99 Other Tips for Surviving And Thriving While You Work From Home (Mandala Tree Press, September 2021) by Kevin Rizer is the ultimate guide, filled with simple, practical —and sometimes humorous— steps for remote workers to take to master the art of creating your dream lifestyle, whether you are brand new to working from home or have done it for years.Having been an entrepreneur and leading a remote team for a decade, Rizer shares tips and stories of what has and has not worked for him, as well as advice from friends and professionals. <br>
-                <span class='available'>
-                    Available at Barnes & Noble, Amazon, alwayswearpants.com
-                </span></p>
-        </div>
-        <div class="plm">
-            <h5 class="plmHead">Private Label Movement</h5>
-            <p class='podcast'>In 2015, Kevin founded the Private Label Podcast (which later became Private Label Movement). The show was the preeminent authority for Amazon sellers and e-commerce startups, with millions of downloads and a loyal, highly engaged audience. Kevin’s down to earth personality and curiosity-driven interview style won over fans as he probed the minds of thought leaders and everyday rags to riches entrepreneurs. Kevin exited the show in 2018 and was not the host of the final season.</p>
-        </div>
-        <div class='plmImg'>
-        </div>
-    </div>
-    <div id="speaking">
-        <div class='speakContain'>
-            <h3>Speaking</h2>
-            <p class="speaker">Kevin has entertained and informed audiences large and small, and loves partnering with events and conferences to craft a compelling keynote that will live on in impact long after the event has ended. He is available for speaking engagements throughout the U.S. and internationally.<br> 
-            <span class="inquire">To inquire about speaking engagements,<br> email rachel@alwayswearpants.com</span></p>
-        </div>
-        <div class="speakImg"></div>
-    </div>
-    <div id="connect">
-        <div class="linkContain">
-            <h3>Connect</h3>
-        </div>
-        <div class="iconContain">
-            <div class="icon text">
-                <div class="textIcon"></div>
-                <p>Text</p>
-            </div> 
-            <div class="icon email">
-                <div class="emailIcon"></div>
-                <p>Email</p>
+        <div id="speaking">
+            <div class='speakContain'>
+                <h3>Speaking</h2>
+                <p class="speaker">Kevin has entertained and informed audiences large and small, and loves partnering with events and conferences to craft a compelling keynote that will live on in impact long after the event has ended. He is available for speaking engagements throughout the U.S. and internationally.<br> 
+                <span class="inquire">To inquire about speaking engagements,<br> email rachel@alwayswearpants.com</span></p>
             </div>
-            <div class="icon facebook">
-                <div class="fbIcon"></div>
-                <p>Facebook</p>
+            <div class="speakImg"></div>
+        </div>
+        <div id="connect">
+            <div class="headshot"></div>
+            <div class="linkContain">
+                <h3>Connect</h3>
             </div>
-            <div class="icon instagram">
-                <div class="instaIcon"></div>
-                <p>Instagram</p>
-            </div>
-            <div class="icon linkedin">
-                <div class="inIcon"></div>
-                <p>Linkedin</p>
+            <div class="iconContain">
+                <div class="icon text">
+                    <a target="_blank" class="textIcon" href="https://my.community.com/kevinrizer">
+                        <img src="/images/icons/cellphone.png">
+                    </a>
+                    <p>Text</p>
+                </div> 
+                <div class="icon email">
+                    <a target="_blank" class="emailIcon" href="mailto:kevin@alwayswearpants.com">
+                        <img src="/images/icons/email.png">
+                    </a>
+                    <p>Email</p>
+                </div>
+                <div class="icon facebook">
+                    <a target="_blank" class="fbIcon" href="https://www.facebook.com/realkevinrizer">
+                        <img src="/images/icons/facebook.png">
+                    </a>
+                    <p>Facebook</p>
+                </div>
+                <div class="icon instagram">
+                    <a target="_blank" class="instaIcon" href="https://www.instagram.com/alwayswearpants/">
+                        <img src="/images/icons/instagram.png">
+                    </a>
+                    <p>Instagram</p>
+                </div>
+                <div class="icon linkedin">
+                    <a target="_blank" class="inIcon" href="https://www.linkedin.com/in/kevin-rizer-95537829/">
+                        <img src="/images/icons/linkedin.png">
+                    </a>
+                    <p>Linkedin</p>
+                </div>
+                <a name='bottom'></a>
             </div>
         </div>
-        <div class="headshot"></div>
     </div>
 </body>
 </html>

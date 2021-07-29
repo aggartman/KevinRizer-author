@@ -1,5 +1,5 @@
 html {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     padding: 0;
     margin: 0 auto;
@@ -8,32 +8,37 @@ html {
     font-family: 'Signika', sans-serif;
     background-color: #354857;
     color: whitesmoke;
+    font-size: 12px;
 }
 body {
-    // height: 100%;
+    width: 100%;
     margin: 0 auto;
-    overflow-x: hidden;
 }
 .container {
-    max-width: 1250px;
+    width: 80%;
     margin: 0 auto;
-    padding: 75px;
     padding-top: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: 150px repeat(2, auto);
+    @media only screen and (min-width: 1250px) {
+        // padding: 75px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 150px repeat(7, auto);
+    }
     background-color: #354857;
-    border-left: 2px solid whitesmoke;
-    border-right: 2px solid whitesmoke;
+    border-left: 4px solid whitesmoke;
+    border-right: 4px solid whitesmoke;
 }
 .header { //container grid 
-    grid-column: 1 / 3;
-    grid-row: 1;
-    display: grid;
-    width: 100%;
-    max-width: 1250px;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(1, auto);
+    @media only screen and (min-width: 1250px) {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(1, auto);
+        height: 18%;
+        margin: 0 auto;
+    }
+    width: 80%;
     justify-content: space-between;
     background-color: #354857;
     position: fixed;
@@ -42,99 +47,162 @@ body {
 }
 .title { //header grid
     font-family: 'Libre Franklin', sans-serif; 
-    font-size: 5rem;
+    font-size: 3rem;
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        font-size: 5rem;
+    }
+    @media only screen and (min-width: 1250px) {
+        font-size: 8rem;
+        box-sizing: border-box;
+        // padding-left: 10px;
+    }
     text-align: left;
     align-self: center;
     color: whitesmoke;
-    cursor: pointer;
+    text-decoration: none;
 }
-
 .navbar { //header grid
     margin: 0;
     padding: 0;
     width: 100%;
     align-self: center;
-    grid-column-end: 3;
-    grid-row: 1;
+    display: inline-block;
+    @media only screen and (min-width: 1250px) {
+        grid-column-end: 6;
+        grid-row: 1 / 2;
+        padding-right: 10px;
+    }
 }
-
 .nav { //header grid
-    list-style-type: none;
+    overflow: hidden;
+}
+.nav a {
     float: left;
-    width: 100%;
-    font-family: 'Libre Franklin', sans-serif;
-    font-size: 2rem;
-    color: whitesmoke;
-    display: flex;
-    font-weight: bold;
-    transition: 0.3s;
-    align-items: baseline;
-}
-
-li.navItems {
-    float: left;
-    padding: 5px;
-}
-li > a {
-    text-decoration: none;
-    color: whitesmoke;
     display: block;
-    padding: 5px;
-    width: 100%;
-}
-h1 {
-    margin-bottom: 0;
-}
-h1 > a {
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
     text-decoration: none;
-    color: inherit;
-    display: block;
-    box-sizing: border-box;
-    padding: 5px;
+    font-size: 1rem;
+    @media only screen and (min-width: 800px) {
+        font-size: 2rem;
+        float: left;
+    }
+    @media only screen and (min-width: 1250px) {
+        font-size: 4rem;
+    }
 }
-.navItems:not(:last-child) {
-    margin-right: 20px;
-}
-li > a:hover {
+.nav a:hover {
     background-color: whitesmoke;
     color: #354857;
-    cursor: pointer;
     border-radius: 5px;
 }
+.nav a:active {
+    background-color: whitesmoke;
+    color: #354857;
+    border-radius: 5px;
+} 
+.nav .icon {
+    display: none;
+  }
+.nav .icon:hover {
+    background-color: #354857;
+    color: whitesmoke;
+    border-radius: 0;
+}
+ /* When the screen is less than 800 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+ @media screen and (max-width: 800px) {
+    .nav a {display: none;}
+    .nav a.icon {
+      float: right;
+      display: block;
+      scale: 1.5;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 800px) {
+    .nav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  } 
+// h1 {
+//     margin-bottom: 0;
+// }
+// h1 > a {
+//     text-decoration: none;
+//     color: inherit;
+//     display: block;
+//     box-sizing: border-box;
+//     padding: 5px;
+// }
+
+// .navItems:not(:last-child) {
+//     margin-right: 20px;
+// }
 .headerdivider { //header grid
     border-bottom: 3px solid whitesmoke;
-    grid-column: 1 / 3;
+    grid-column: 1 / 6;
     position: relative;
     bottom: 0px;
 }
 .titleImage {
-    grid-column: 1 / 4;
-    grid-row: 2 / 3;
-    height: 400px;
+    @media screen and (min-width: 1250px) {
+        grid-column: 1 / 6;
+        grid-row: 2 / 3;
+        padding: 0;
+        height: 400px;
+        position: relative;
+        top: 0;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        height: 300px;
+    }
+    // padding-top: 20px;
+    height: 200px;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 30px;
     background-image: url('/images/kevin_smiling.jpg');
     background-repeat: no-repeat;
-    background-position: 50% 30%;
+    background-position: 30% 30%;
     background-size: 100%;
 }
-.statementContain {
-    padding-top: 0px;
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-    display: grid;
-    grid-template: repeat(2, auto) / repeat(3, minmax(0, 1fr));
+@media only screen and (min-width: 1250px) {
+    .statementContain {
+        padding-top: 0px;
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(3, auto);
+    }
 }
 .statement {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        font-size: 5rem;
+        width: 85%;
+        top: 150px;
+        padding-left: 20px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        font-size: 4rem;
+    }
     color: #354857;
-    width: 85%;
-    font-size: 5rem;
+    position: absolute;
+    top: 70px;
+    font-size: 2rem;
     font-family: 'Signika', sans-serif;
     font-weight: bold;
     font-style: normal;
     text-align: left;
-    // box-sizing: border-box;
-    // margin-right: 500px;
     padding-right: 5%;
     margin-left: 10px;
     line-height: 110%;
@@ -143,275 +211,495 @@ li > a:hover {
     font-family: 'Quentin', cursive;
     font-weight: normal;
     font-style: normal;
-    font-size: 10rem;
-    float: right;
-    // line-height: 100%;
+    @media only screen and (min-width: 1250px) {
+        font-size: 16rem;
+        margin-left: 80px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        font-size: 8rem;
+    }
+    font-size: 4rem;
+    float: left;
+    line-height: 130%;
 }
 .values {
-    grid-column: 1 / 4;
-    grid-row: 2 / 3;
+    @media screen and (min-width: 1250px) {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+        text-align: left;
+        font-size: 3rem;
+        padding-top: 0;
+        padding-left: 50px;
+        line-height: 110%;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        padding-top: 45px;
+        font-size: 2rem;
+    }
     font-family: inherit;
-    font-size: 3rem;
+    font-size: 1.5rem;
     line-height: 100%;
     text-align: left;
     margin: 0;
     margin-left: 50px;
-    padding-top: 10px;
+    padding-top: 25px;
     padding-bottom: 30px;
 }
 .valueAction {
     font-style: italic;
     font-weight: 600;
 }
-.aboutContain { // about grid
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 0px 75px;
-    padding-bottom: 75px;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(6, auto);
-    row-gap: 50px;
-    background-color: #354857;
-    border-left: 2px solid whitesmoke;
-    border-right: 2px solid whitesmoke;
+@media only screen and (min-width: 1250px) {
+    .aboutContain { // about grid
+        grid-column: 1 / 6;
+        grid-row: 4 / 5;
+        margin: 0 auto;
+        padding: 0px 75px;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(6, auto);
+        row-gap: 50px;
+        // background-color: #354857;
+        // border-left: 2px solid whitesmoke;
+        // border-right: 2px solid whitesmoke;
+    }
+
+    .imgContain { //aboutContain grid
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
 }
-.imgContain { //aboutContain grid
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
-    display: grid;
+#about {
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        scroll-margin-top: 80px;
+    }
+    @media only screen and (min-width: 1250px) {
+        scroll-margin-top: 200px;
+    }
+    scroll-margin-top: 50px;
+}
+.imgContain {
+    @media only screen and (min-width: 760px) {
+        background-position: 50% 20%;
+    }
+    @media only screen and (min-width: 1250px) { 
+        height: 400px;
+    }
     width: 100%;
-    max-height: 100%;
+    height: 300px;
     background-image: url('/images/Rizer_02.jpg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    scroll-margin: 150px;
     box-sizing: border-box;
 }
 .aboutTxt { //aboutContain grid
-    grid-column: 3 / 4;
-    grid-row: 1 / 3;
-    display: grid;
-    grid-template-rows: 1fr;
-    padding-left: 20px;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        display: grid;
+        grid-template-rows: 1fr;
+        padding-left: 20px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        padding: 10px 10px 0 10px;
+    }
+    padding-left: 10px;
+    padding-top: 10px;
 }
 h3 { //aboutTxt grid
-    font-size: 4rem;
+    @media only screen and (min-width: 1250px) {
+        font-size: 4rem;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        font-size: 3rem;
+    }
+    font-size: 2rem;
     margin: 0px;
 }
 p.about { //aboutTxt grid
-    font-size: 2rem;
+    @media only screen and (min-width: 1250px) {
+        font-size: 2rem;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px){
+        font-size: 1.5rem;
+    }
+    font-size: 1rem;
     margin-top: 0;
 }
-.about2 { //aboutContain grid
-    grid-row: 3 / 6;
-    grid-column: 1 / 2;
-    font-size: 2rem;
-    margin: 0;
-    max-width: 100%;
-    text-align: left;
-    color: inherit;
-    box-sizing: border-box;
-    padding-right: 2%;
-}
 .img2Contain { //aboutContain grid
-    grid-column: 3 / 4;
-    grid-row: 3 / 6;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 3 / 4;
+        grid-row: 3 / 6;
+        height: 400px;
+        background-position: 50% 90%;
+    }
+    @media only screen and (min-width: 760px) and (max-width:1249px) {
+        height: 300px;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px){
+        height: 200px;
+    }
     background: url('/images/kevin_new_outside_smiling_big.jpg') no-repeat;
     background-size: cover;
     background-position: 0% 50%;
 }
-#work {
-    scroll-margin-top: 80px;
-}
-.workContain {
-    max-width: 1250px;
+.about2 { //aboutContain grid
+    @media only screen and (min-width: 1250px) {
+        grid-row: 3 / 6;
+        grid-column: 1 / 2;
+        font-size: 2rem;
+        max-width: 100%;
+        text-align: left;
+        padding-right: 2%;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        font-size: 1.5rem;
+    }
+    font-size: 1rem;
     margin: 0 auto;
-    padding: 75px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, auto);
-    background-color: #354857;
-    border-left: 2px solid whitesmoke;
-    border-right: 2px solid whitesmoke;
-    row-gap: 30px;
+    color: inherit;
+    box-sizing: border-box;
+    padding: 10px;
 }
+#work {
+    @media only screen and (min-width: 1250px) {
+        scroll-margin-top: 100px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        scroll-margin-top: 80px;
+    }
+    scroll-margin-top: 50px;
+}
+@media only screen and (min-width: 1250px) {
+    .workContain {
+        grid-column: 1 / 6;
+        grid-row: 5 / 6;
+        padding: 75px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+        row-gap: 30px;
+    }
+}
+// .workContain {
+//     width: 80%;
+//     margin: 0 auto;
+//     background-color: #354857;
+//     border-left: 2px solid whitesmoke;
+//     border-right: 2px solid whitesmoke;
+// }
 .BookContain {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    display: flex;
-    justify-content: left;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: left;
+        height: 400px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        height: 300px;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px) {
+        height: 200px;
+        width: 100%;
+        margin: 0 auto;
+        // margin-top: 10px;
+    }
     background: url('/images/AWP-1200×630px.png') no-repeat;
     background-position: 50% 50%;
     background-size: cover;
 }
 .workTxt {
-    grid-column: 3 / 5;
-    grid-row: 1 / 2;
-    font-size: 2rem;
-    padding-left: 20px;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 3 / 5;
+        grid-row: 1 / 2;
+        font-size: 2rem;
+        padding-left: 20px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        padding: 20px 10px 0px;
+    }
+    font-size: 1rem;
+    padding: 0 10px;
 }
 .workTxt>p {
     margin-top: 0;
+    @media only screen and (min-width: 760px) and (max-width: 1249px){
+        font-size: 1.5rem;
+    }
 }
 .available {
-    font-size: 1.5rem;
+    @media only screen and (min-width: 1250px) {
+        font-size: 1.5rem;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        font-size: 1rem;
+    }
+    font-size: .75rem;
     font-style: italic;
+    padding-left: 5px;
 }
 .plm {
-    grid-column: 1 / 3;
-    grid-row: 2 / 4;
-    font-size: 2rem;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 4;
+        font-size: 2rem;
+        padding-right: 20px;
+    }
     margin: 0;
     box-sizing: border-box;
-    padding-right: 20px;
+    padding: 0 10px;
 }
 .plmHead {
-    font-size: 2.5rem;
-    margin-bottom: 0px;
-    margin-top: 40px;
+    @media only screen and (min-width: 1250px) {
+        font-size: 2.5rem;
+        margin-bottom: 0px;
+        // margin-top: 40px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px){
+        font-size: 2rem;
+    }
+    font-size: 1.5rem;
+    margin: 0;
 }
 .podcast {
     margin-top: 10px;
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        font-size: 1.5rem;
+    }
+    @media only screen and (min-width: 1250px) {
+        font-size: 2rem;
+    }
 }
 .plmImg {
-    grid-column: 3 / 5;
-    grid-row: 2 / 4;
-    background: url('/images/kevin_new_studio_smiling3.jpg') no-repeat;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 3 / 5;
+        grid-row: 2 / 4;
+    }
+    @media only screen and (min-width: 360px) {
+        height: 200px;
+    }
+    @media only screen and (min-width: 760px) {
+        height: 300px;
+        background-position: 50% 10%;
+    }
+    background: url('/images/Kevin-Headshot-1.jpg') no-repeat;
     background-size: cover;
     background-position: 50% 50%;
 }
 #speaking {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 75px 75px;
-    border-left: 2px solid whitesmoke;
-    border-right: 2px solid whitesmoke;
-    background-color: #354857;
-    display: grid;
-    grid-template: repeat(3, auto) / repeat(4, 1fr);
+    @media only screen and (min-width: 1250px) {
+        grid-column: 1 / 6;
+        grid-row: 6 / 7;
+        padding: 75px 75px;
+        display: grid;
+        grid-template: repeat(3, auto) / repeat(4, 1fr);
+        scroll-margin-top: 100px;
+    }
     scroll-margin-top: 80px;
 }
 .speakContain {
-    grid-column: 1 / 3;
-    grid-row: 1/ 4;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 1 / 3;
+        grid-row: 1/ 4;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 1249px) {
+        padding: 10px;
+    }
 }
 .speaker {
-    font-size: 2rem;
-    padding-right: 10px;
-    margin-top: 10px;
+    @media only screen and (min-width: 1250px) {
+        font-size: 2rem;
+        padding-right: 15px;
+        margin-top: 10px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        font-size: 1.5rem;
+    }
 }
 .inquire {
-    font-size: 1.3rem;
-    font-style: italic;
+    @media only screen and (min-width: 1250px) {
+        font-size: 1.5rem;
+        font-style: italic;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        font-size: 1.15rem;
+        font-style: italic;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px){
+        font-size: .75rem;
+        font-style: italic;
+    }
 }
 .speakImg {
-    grid-column: 3 / 5;
-    grid-row: 1 / 4;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 3 / 5;
+        grid-row: 1 / 4;
+        height: 350px;
+        background-position: 50% 20%;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px){
+        height: 250px;
+        background-position: 50% 10%;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px) {
+        height: 300px;
+    }
     background: url('/images/Rizer_11.jpg') no-repeat;
     background-size: cover;
     background-position: 50% 50%;
 }
 #connect {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 75px;
-    border-left: 2px solid whitesmoke;
-    border-right: 2px solid whitesmoke;
-    background-color: #354857;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    @media only screen and (min-width: 1250px) {
+        grid-column: 1 / 6;
+        grid-row: 7 / 8;
+        padding: 75px;
+        padding-bottom: 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px) {
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    margin-top: 20px;
 } 
 .headshot {
-    grid-column: 3 / 5;
-    grid-row: 1 / 6;
-    width: 100%;
-    height: 100%;
+    @media only screen and (min-width: 1250px) {
+        grid-column: 3 / 5;
+        grid-row: 1 / 6;
+        width: 90%;
+        height: 90%;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1259px){
+        height: 200px;
+        width: 200px;
+        float: right;
+        padding-right: 10px;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px){
+        height: 150px;
+        width: 150px;
+        float: right;
+        padding-right: 10px;
+    }
     background: url('/images/Rizer_09.jpg') no-repeat;
     background-position: 50% 20%;
     background-size: cover;
 } 
-.linkContain {
-    grid-column: 1 / 3;
-    grid-row: 1;
-}
-.iconContain {
-    grid-column: 1 / 3;
-    grid-row: 3;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+@media only screen and (min-width: 1250px) {
+    .linkContain {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+    .iconContain {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 .icon {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-}
-.text {
-    grid-column: 1 / 2;
-    justify-self: center;
+    @media only screen and (min-width: 1250px) {
+        // width: 100px;
+        // height: 100px;
+        a > img {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+        }
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        margin-top: 10px;
+        padding-top: 5px;
+        display: inline-block;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px) {
+        a > img {
+        width: 50px;
+        height: 50px;
+        }
+        display: inline-block;
+    }
+    margin: 0 5px;
+    // display: inline-block;
 }
 .icon > p {
+    @media only screen and (min-width: 1250px) {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px){
+        font-size: 1rem;
+    }
+    font-size: .75rem;
     text-align: center;
     margin-top: 5px;
     font-family: 'Signika', sans-serif;
-    font-weight: 600;
 }
-.textIcon {
-    background: url('/images/icons/cellphone.png') no-repeat;
-    background-size: 80%;
-    background-position: 50% 50%;
-    height: 100%;
-    width: 100%;
+@media only screen and (min-width: 1250px) {
+    .email {
+        grid-column: 1 / 2;
+        grid-row: 1;
+        justify-self: center;
+    }
+    .emailIcon {
+        height: 100%;
+        width: 100%;
+    }
+    .facebook {
+        grid-column: 2 / 3;
+        grid-row: 1;
+        justify-self: center;
+    }
+    .fbIcon {
+        height: 100%;
+        width: 100%;
+    }
+    .instagram {
+        grid-column: 3 / 4;
+        grid-row: 1;
+        justify-self: center;
+    }
+    .instaIcon {
+        height: 100%;
+        width: 100%;
+    }
+    .linkedin {
+        grid-column: 4 / 5;
+        grid-row: 1;
+        justify-self: center;
+    }
+    .inIcon {
+        height: 100%;
+        width: 100%;
+    }
+    .textIcon {
+            height: 100%;
+            width: 100%;
+        }
 }
-.email {
-    grid-column: 2 / 3;
-    justify-self: center;
-}
-.emailIcon {
-    background: url('/images/icons/email.png') no-repeat;
-    background-size: 80%;
-    background-position: 50% 50%;
-    height: 100%;
-    width: 100%;
-}
-.facebook {
-    grid-column: 3 / 4;
-    justify-self: center;
-}
-.fbIcon {
-    background: url('/images/icons/facebook.png') no-repeat;
-    background-size: 80%;
-    background-position: 50% 50%;
-    height: 100%;
-    width: 100%;
-}
-.instagram {
-    grid-column: 4 / 5;
-    justify-self: center;
-}
-.instaIcon {
-    background: url('/images/icons/instagram.png') no-repeat;
-    background-size: 80%;
-    background-position: 50% 50%;
-    height: 100%;
-    width: 100%;
-}
-.linkedin {
-    grid-column: 5 / 6;
-    justify-self: center;
-}
-.inIcon {
-    background: url('/images/icons/linkedin.png') no-repeat;
-    background-size: 80%;
-    background-position: 50% 50%;
-    height: 100%;
-    width: 100%;
+.text {
+    @media only screen and (min-width: 1250px) {
+        grid-column: 5 / 6;
+        grid-row: 1;
+        justify-self: center;
+        visibility: hidden;
+    }
+    @media only screen and (max-width: 992px) {
+        visibility: visible;
+    }
 }
 .icon:hover {
     background-color: whitesmoke;
     border-radius: 5px;
+    color: #354857;
 }
 // * {
 //     border: 1px solid red
