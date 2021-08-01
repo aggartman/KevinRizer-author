@@ -84,7 +84,7 @@ body {
     padding: 10px;
     text-decoration: none;
     font-size: 1rem;
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 760px) and (max-width: 1259px){
         font-size: 2rem;
         float: left;
     }
@@ -130,21 +130,7 @@ body {
       display: block;
       text-align: left;
     }
-  } 
-// h1 {
-//     margin-bottom: 0;
-// }
-// h1 > a {
-//     text-decoration: none;
-//     color: inherit;
-//     display: block;
-//     box-sizing: border-box;
-//     padding: 5px;
-// }
-
-// .navItems:not(:last-child) {
-//     margin-right: 20px;
-// }
+  }
 .headerdivider { //header grid
     border-bottom: 3px solid whitesmoke;
     grid-column: 1 / 6;
@@ -479,6 +465,7 @@ p.about { //aboutTxt grid
     }
     @media only screen and (min-width: 360px) {
         height: 200px;
+        background-position: 50% 10%;
     }
     @media only screen and (min-width: 760px) {
         height: 300px;
@@ -488,6 +475,31 @@ p.about { //aboutTxt grid
     background-size: cover;
     background-position: 50% 50%;
 }
+.entrepreneurship {
+    h5 {
+        @media only screen and (min-width: 1250px) {
+            font-size: 2.5rem;
+            margin-bottom: 0px;
+        }
+        @media only screen and (min-width: 760px) and (max-width: 1249px){
+            font-size: 2rem;
+        }
+        font-size: 1.5rem;
+        margin: 0;
+        margin-top: 10px;
+    }
+    padding: 0 10px;
+    p {    
+        margin-top: 5px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        font-size: 1.5rem;
+    }
+    @media only screen and (min-width: 1250px) {
+        font-size: 2rem;
+        grid-column: 1 / 4;
+    }
+}
 #speaking {
     @media only screen and (min-width: 1250px) {
         grid-column: 1 / 6;
@@ -496,6 +508,9 @@ p.about { //aboutTxt grid
         display: grid;
         grid-template: repeat(3, auto) / repeat(4, 1fr);
         scroll-margin-top: 100px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1250px) {
+        margin-top: 75px;
     }
     scroll-margin-top: 80px;
 }
@@ -558,7 +573,7 @@ p.about { //aboutTxt grid
         padding-bottom: 0px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
     @media only screen and (min-width: 760px) and (max-width: 1249px) {
         margin-bottom: 20px;
@@ -573,7 +588,7 @@ p.about { //aboutTxt grid
 .headshot {
     @media only screen and (min-width: 1250px) {
         grid-column: 3 / 5;
-        grid-row: 1 / 6;
+        grid-row: 1 / 4;
         width: 90%;
         height: 90%;
     }
@@ -592,17 +607,26 @@ p.about { //aboutTxt grid
     background: url('/images/Rizer_09.jpg') no-repeat;
     background-position: 50% 20%;
     background-size: cover;
-} 
-@media only screen and (min-width: 1250px) {
-    .linkContain {
+}
+.iconContain {
+    @media only screen and (min-width: 1250px) {
         grid-column: 1 / 3;
-        grid-row: 1;
-    }
-    .iconContain {
-        grid-column: 1 / 3;
-        grid-row: 3;
+        grid-row: 2;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+    }
+}
+.linkContain {
+    @media only screen and (min-width: 1250px) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        font-size: 2rem;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1259px){
+        font-size: 1rem;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px){
+        font-size: .75rem;
     }
 }
 .icon {

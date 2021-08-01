@@ -126,7 +126,7 @@ body {
   font-size: 1rem;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 760px) and (max-width: 1259px) {
   .nav a {
     font-size: 2rem;
     float: left;
@@ -728,6 +728,7 @@ p.about {
 @media only screen and (min-width: 360px) {
   .plmImg {
     height: 200px;
+    background-position: 50% 10%;
   }
 }
 
@@ -735,6 +736,48 @@ p.about {
   .plmImg {
     height: 300px;
     background-position: 50% 10%;
+  }
+}
+
+.entrepreneurship {
+  padding: 0 10px;
+}
+
+.entrepreneurship h5 {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 1250px) {
+  .entrepreneurship h5 {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1249px) {
+  .entrepreneurship h5 {
+    font-size: 2rem;
+  }
+}
+
+.entrepreneurship p {
+  margin-top: 5px;
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1250px) {
+  .entrepreneurship {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .entrepreneurship {
+    font-size: 2rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
   }
 }
 
@@ -757,6 +800,12 @@ p.about {
     -ms-grid-columns: (1fr)[4];
         grid-template: repeat(3, auto)/repeat(4, 1fr);
     scroll-margin-top: 100px;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1250px) {
+  #speaking {
+    margin-top: 75px;
   }
 }
 
@@ -862,8 +911,8 @@ p.about {
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-    -ms-grid-rows: (1fr)[5];
-        grid-template-rows: repeat(5, 1fr);
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
   }
 }
 
@@ -894,8 +943,8 @@ p.about {
     -ms-grid-column-span: 2;
     grid-column: 3 / 5;
     -ms-grid-row: 1;
-    -ms-grid-row-span: 5;
-    grid-row: 1 / 6;
+    -ms-grid-row-span: 3;
+    grid-row: 1 / 4;
     width: 90%;
     height: 90%;
   }
@@ -920,23 +969,40 @@ p.about {
 }
 
 @media only screen and (min-width: 1250px) {
+  .iconContain {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1250px) {
   .linkContain {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1 / 3;
     -ms-grid-row: 1;
-    grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    font-size: 2rem;
   }
-  .iconContain {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1 / 3;
-    -ms-grid-row: 3;
-    grid-row: 3;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1259px) {
+  .linkContain {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 759px) {
+  .linkContain {
+    font-size: .75rem;
   }
 }
 
