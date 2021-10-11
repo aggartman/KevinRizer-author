@@ -32,8 +32,8 @@ body {
     display: grid;
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
-    -ms-grid-rows: 150px (auto)[7];
-        grid-template-rows: 150px repeat(7, auto);
+    -ms-grid-rows: 150px (auto)[8];
+        grid-template-rows: 150px repeat(8, auto);
   }
 }
 
@@ -591,6 +591,7 @@ p.about {
 @media only screen and (min-width: 760px) and (max-width: 1249px) {
   .BookContain {
     height: 300px;
+    background-size: contain;
   }
 }
 
@@ -893,6 +894,126 @@ p.about {
   }
 }
 
+#press {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1 / 6;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 / 8;
+  scroll-margin-top: 150px;
+}
+
+@media only screen and (min-width: 1250px) {
+  #press {
+    padding: 25px 75px;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1249px) {
+  #press {
+    padding: 45px 45px;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 759px) {
+  #press {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  #pressMentions {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1249px) {
+  #pressMentions {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 759px) {
+  #pressMentions {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+.articleContain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
+  background: white;
+  background: linear-gradient(-30deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.3) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+  -webkit-box-shadow: 10px 10px 5px 2px rgba(0, 0, 0, 0.226);
+          box-shadow: 10px 10px 5px 2px rgba(0, 0, 0, 0.226);
+  cursor: pointer;
+}
+
+.articleContain:hover {
+  background: linear-gradient(-30deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.45) 100%);
+}
+
+.articleContain:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.articleContain::before {
+  background-color: rgba(255, 255, 255, 0.322);
+  -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+          backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+  content: '';
+}
+
+.articleContain > .title h3 {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.articleContain > .excerptContain > * {
+  font-size: 15px;
+}
+
+.articleContain > .logoContain {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.articleContain > .logoContain > img {
+  width: 100px;
+}
+
 #connect {
   margin-top: 20px;
 }
@@ -902,9 +1023,9 @@ p.about {
     -ms-grid-column: 1;
     -ms-grid-column-span: 5;
     grid-column: 1 / 6;
-    -ms-grid-row: 7;
+    -ms-grid-row: 8;
     -ms-grid-row-span: 1;
-    grid-row: 7 / 8;
+    grid-row: 8 / 9;
     padding: 75px;
     padding-bottom: 0px;
     display: -ms-grid;
@@ -928,6 +1049,22 @@ p.about {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 10px;
+  }
+}
+
+.contact {
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 1250px) {
+  .contact {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1249px) {
+  .contact {
+    font-size: 14px;
   }
 }
 
@@ -980,6 +1117,10 @@ p.about {
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
   }
+}
+
+.linkContain p > a {
+  color: inherit;
 }
 
 @media only screen and (min-width: 1250px) {

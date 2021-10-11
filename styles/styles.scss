@@ -22,7 +22,7 @@ body {
         // padding: 75px;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 150px repeat(7, auto);
+        grid-template-rows: 150px repeat(8, auto);
     }
     background-color: #354857;
     border-left: 4px solid whitesmoke;
@@ -385,6 +385,7 @@ p.about { //aboutTxt grid
     }
     @media only screen and (min-width: 760px) and (max-width: 1249px) {
         height: 300px;
+        background-size: contain;
     }
     @media only screen and (min-width: 360px) and (max-width: 759px) {
         height: 200px;
@@ -565,10 +566,83 @@ p.about { //aboutTxt grid
     background-size: cover;
     background-position: 50% 50%;
 }
+#press {
+    grid-column: 1 / 6;
+    grid-row: 7 / 8;
+    scroll-margin-top: 150px;
+    @media only screen and (min-width: 1250px) {
+        padding: 25px 75px;
+    }
+    @media only screen and (min-width: 760px) and (max-width: 1249px) {
+        padding: 45px 45px;
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px) {
+        padding: 0;
+    }
+}
+#pressMentions {
+    @media only screen and (min-width: 1250px){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 760px) and (max-width: 1249px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    @media only screen and (min-width: 360px) and (max-width: 759px) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+}
+.articleContain {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background: rgb(255,255,255);
+    background: linear-gradient(-30deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.30) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 10px 10px 5px 2px rgba(0, 0, 0, 0.226);
+    cursor: pointer;
+    &:hover {
+        background: linear-gradient(-30deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.45) 100%);
+    }
+    &:active {
+        transform: scale(0.98);
+    }
+    &::before {
+        background-color: rgba(255, 255, 255, 0.322);
+        backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+        content: '';
+    }
+    > .title {
+        h3 {
+            font-size: 20px;
+            color: #ffffff;
+        }
+    }
+    > .excerptContain > * {
+        font-size: 15px;
+    } 
+    > .logoContain {
+        > img {
+            width: 100px;
+        }
+        align-self: flex-end;
+        width: fit-content;
+    }
+}
 #connect {
     @media only screen and (min-width: 1250px) {
         grid-column: 1 / 6;
-        grid-row: 7 / 8;
+        grid-row: 8 / 9;
         padding: 75px;
         padding-bottom: 0px;
         display: grid;
@@ -585,6 +659,17 @@ p.about { //aboutTxt grid
     }
     margin-top: 20px;
 } 
+
+.contact {
+    @media only screen and (min-width: 1250px) {
+        font-size: 18px;
+    }
+    @media only screen and (min-width: 760px) and (max-width:1249px) {
+        font-size: 14px;
+    }
+    font-size: 12px;
+}
+
 .headshot {
     @media only screen and (min-width: 1250px) {
         grid-column: 3 / 5;
@@ -617,6 +702,10 @@ p.about { //aboutTxt grid
     }
 }
 .linkContain {
+    p > a {
+        // text-decoration: none;
+        color: inherit;
+    }
     @media only screen and (min-width: 1250px) {
         grid-column: 1 / 3;
         grid-row: 1 / 2;
